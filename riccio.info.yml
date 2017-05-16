@@ -1,0 +1,4 @@
+name: Riccio
+type: module
+description: 'Provides Riccio library integration for Drupal.'
+core: 8.x

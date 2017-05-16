@@ -1,0 +1,5 @@
+entity.riccio.add_form:
+  route_name: 'entity.riccio.add_form'
+  title: 'Add configuration'
+  appears_on:
+    - entity.riccio.collection

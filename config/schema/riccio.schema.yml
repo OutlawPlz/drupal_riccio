@@ -1,0 +1,35 @@
+riccio.riccio.*:
+  type: config_entity
+  label: 'Riccio configuration'
+  mapping:
+    id:
+      type: string
+      label: 'Machine-readable name'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+      label: 'UUID'
+    options:
+      type: mapping
+      label: 'Options'
+      mapping:
+        itemSelector:
+          type: string
+          label: 'Item selector'
+        popSelector:
+          type: string
+          label: 'Pop selector'
+        perRowFromCss:
+          type: boolean
+          label: 'Get perRow option from CSS'
+        perRow:
+          type: integer
+          label: 'Items per row'
+        mediaQueriesFromCss:
+          type: boolean
+          label: 'Calculate mediaQueries option from CSS'
+        mediaQueries:
+          type: text
+          label: 'Media queries list'

@@ -1,0 +1,49 @@
+entity.riccio.canonical:
+  path: '/admin/config/user-interface/riccio/{riccio}'
+  defaults:
+    _entity_form: 'riccio.edit'
+    _title: 'Edit configuration'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.riccio.add_form:
+  path: '/admin/config/user-interface/riccio/add'
+  defaults:
+    _entity_form: 'riccio.add'
+    _title: 'Add configuration'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.riccio.edit_form:
+  path: '/admin/config/user-interface/riccio/{riccio}/edit'
+  defaults:
+    _entity_form: 'riccio.edit'
+    _title: 'Edit configuration'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.riccio.delete_form:
+  path: '/admin/config/user-interface/riccio/{riccio}/delete'
+  defaults:
+    _entity_form: 'riccio.delete'
+    _title: 'Delete configuration'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.riccio.collection:
+  path: '/admin/config/user-interface/riccio'
+  defaults:
+    _entity_list: 'riccio'
+    _title: 'Droppy configurations'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'administer site configuration'

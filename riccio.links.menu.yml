@@ -1,0 +1,5 @@
+riccio.admin_config_ui.collection:
+  title: Riccio
+  route_name: entity.riccio.collection
+  description: 'Add and modify Riccio configurations.'
+  parent: system.admin_config_ui
