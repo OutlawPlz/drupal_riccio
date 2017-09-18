@@ -1,0 +1,15 @@
+riccio:
+  remote: https://github.com/OutlawPlz/riccio
+  version: VERSION
+  license:
+    name: GPL-3.0
+    url: https://github.com/OutlawPlz/riccio/blob/master/LICENSE
+    gpl-compatible: true
+  css:
+    component:
+      /libraries/riccio/dist/riccio.min.css: { minified: true }
+  js:
+    /libraries/riccio/dist/riccio.min.js: { minified: true }
+  dependencies:
+    - core/drupal
+    - core/drupalSettings

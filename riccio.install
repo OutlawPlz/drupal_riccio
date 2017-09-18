@@ -1,0 +1,38 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the Droppy module.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function riccio_requirements($phase) {
+  $requirements = array(
+    'riccio' => array(
+      'title' => t('Riccio'),
+      'value' => t('Not installed'),
+      'severity' => REQUIREMENT_WARNING,
+      'description' => t('The Riccio library was not found in the <em>libraries/</em> directory. Files <em>riccio.min.js</em> and <em>riccio.min.css</em> should be located at <em>libraries/riccio/dist/</em>.')
+    )
+  );
+
+  $riccio_js = 'libraries/riccio/dist/riccio.min.js';
+  $riccio_css = 'libraries/riccio/dist/riccio.min.css';
+  $package_json = 'libraries/riccio/package.json';
+
+  // If in runtime and files exist, Droppy library is installed correctly.
+  if ($phase === 'runtime' && file_exists($riccio_js) && file_exists($riccio_css)) {
+    $requirements['riccio']['severity'] = REQUIREMENT_OK;
+    $requirements['riccio']['value'] = t('Installed');
+    unset($requirements['riccio']['description']);
+  }
+
+  // If package.json exists, calculate library version.
+  if (file_exists($package_json)) {
+    $info = json_decode(file_get_contents($package_json), TRUE);
+    $requirements['riccio']['value'] = $info['version'];
+  }
+
+  return $requirements;
+}

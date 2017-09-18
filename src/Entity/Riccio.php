@@ -6,7 +6,9 @@
 
 namespace Drupal\riccio\Entity;
 
+use Drupal\Core\Annotation\Translation;
 use Drupal\Core\Config\Entity\ConfigEntityBase;
+use Drupal\Core\Entity\Annotation\ConfigEntityType;
 
 /**
  * Defines the Riccio configuration entity.
