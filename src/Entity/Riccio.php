@@ -61,6 +61,17 @@ class Riccio extends ConfigEntityBase implements RiccioInterface {
   protected $options;
 
   /**
+   * Gets the options as saved in database.
+   *
+   * @return array
+   *   The options array as saved in database.
+   */
+  public function getOptions() {
+
+    return $this->options;
+  }
+
+  /**
    * Gets the options formatted as Riccio options.
    *
    * @return array
@@ -70,17 +81,10 @@ class Riccio extends ConfigEntityBase implements RiccioInterface {
 
     $options = $this->options;
 
-    if ($options['perRowFromCss']) {
-      $options['perRow'] = TRUE;
-    }
-
-    unset($options['perRowFromCss']);
-
-    if ($options['mediaQueriesFromCss']) {
-      $options['mediaQueries'] = TRUE;
-    }
-
-    unset($options['mediaQueriesFromCss']);
+    // If perRow is empty, set it to true.
+    $options['perRow'] = isset($options['perRow']) ? $options['perRow'] : TRUE;
+    // If mediaQueries is empty, set it to true,
+    $options['mediaQueries'] = $options['mediaQueries'] ? $options['mediaQueries'] : TRUE;
 
     return $options;
   }

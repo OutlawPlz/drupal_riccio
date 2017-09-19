@@ -21,15 +21,9 @@ riccio.riccio.*:
         popSelector:
           type: string
           label: 'Pop selector'
-        perRowFromCss:
-          type: boolean
-          label: 'Get perRow option from CSS'
         perRow:
           type: integer
           label: 'Items per row'
-        mediaQueriesFromCss:
-          type: boolean
-          label: 'Calculate mediaQueries option from CSS'
         mediaQueries:
           type: text
           label: 'Media queries list'

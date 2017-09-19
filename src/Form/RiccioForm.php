@@ -6,6 +6,7 @@
 
 namespace Drupal\riccio\Form;
 
+
 use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Form\FormStateInterface;
@@ -29,7 +30,7 @@ class RiccioForm extends EntityForm {
 
     /** @var \Drupal\riccio\Entity\RiccioInterface $entity */
     $entity = $this->entity;
-    $options = $entity->get('options');
+    $options = $entity->getOptions();
     $form = parent::form($form, $form_state);
 
     $form['label'] = array(
@@ -67,32 +68,19 @@ class RiccioForm extends EntityForm {
       '#description' => $this->t('It\'s a valid CSS selector of your grid pops. Riccio cuts this elements and print them into the grid pop rows.')
     );
 
-    $form['per_row_from_css'] = array(
-      '#type' => 'checkbox',
-      '#title' => $this->t('Calculate perRow from CSS'),
-      '#default_value' => $options['perRowFromCss'],
-      '#description' => $this->t('If set to true Riccio gets this options from your CSS. This way you can change the layout of your grid in CSS using the media queries.'),
-    );
-
     $form['per_row'] = array(
       '#type' => 'number',
       '#title' => $this->t('Per row'),
       '#default_value' => $options['perRow'],
-      '#description' => $this->t('If you\'re not using media queries set this option to the number of items you want to display in a row.')
-    );
-
-    $form['media_queries_from_css'] = array(
-      '#type' => 'checkbox',
-      '#title' => $this->t('Calculate perRow from CSS'),
-      '#default_value' => $options['mediaQueriesFromCss'],
-      '#description' => $this->t('If set to true Riccio gets this options from your CSS. This way you can change the layout of your grid in CSS using the media queries.'),
+      '#min' => 1,
+      '#description' => $this->t('Leave blank to calculate <em>perRow</em> from CSS. If you\'re not using media queries set this option to the number of items you want to display in a row.'),
     );
 
     $form['media_queries'] = array(
       '#type' => 'textarea',
       '#title' => $this->t('Media queries'),
       '#default_value' => $options['mediaQueries'],
-      '#description' => $this->t('One media query per row. An array of strings representing media queries.')
+      '#description' => $this->t('Leave blank to calculate media queries from CSS. One media query per row. An array of strings representing media queries.'),
     );
 
     return $form;
@@ -116,9 +104,7 @@ class RiccioForm extends EntityForm {
     $entity->set('options', array(
       'itemSelector' => $form_state->getValue('item_selector'),
       'popSelector' => $form_state->getValue('pop_selector'),
-      'perRowFromCss' => $form_state->getValue('per_row_from_css'),
       'perRow' => $form_state->getValue('per_row'),
-      'mediaQueriesFromCss' => $form_state->getValue('media_queries_from_css'),
       'mediaQueries' => $form_state->getValue('media_queries')
     ));
 
@@ -128,10 +114,10 @@ class RiccioForm extends EntityForm {
       '@label' => $entity->get('label')
     );
 
-    if ($status == SAVED_NEW) {
+    if ($status === SAVED_NEW) {
       drupal_set_message($this->t('Configuration <em>@label</em> has been created.', $replacement));
     }
-    elseif ($status == SAVED_UPDATED) {
+    elseif ($status === SAVED_UPDATED) {
       drupal_set_message($this->t('Configuration <em>@label</em> has been updated.', $replacement));
     }
 

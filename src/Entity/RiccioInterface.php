@@ -16,13 +16,20 @@ use Drupal\Core\Config\Entity\ConfigEntityInterface;
 interface RiccioInterface extends ConfigEntityInterface {
 
   /**
+   * Gets the options as saved in database.
+   *
+   * @return array
+   *   The options array as saved in database.
+   */
+  public function getOptions();
+
+  /**
    * Gets the options formatted as Riccio options.
    *
    * @return array
    *   The options array ready to use as Riccio options.
    */
   public function getFormattedOptions();
-
 
   /**
    * Gets the configuration list.

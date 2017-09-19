@@ -14,3 +14,9 @@ Log of unreleased changes.
 - Added `riccio-requirements()` function, it checks if Riccio's library exists
 and calculates Riccio's version if `package.json` is found. Then prints infos
 in the *Status report* page.
+- Added `getOptions()` function. It returns the options as saved in database.
+
+### Removed
+
+- Removed `per_row_from_css` and `media_queries_from_css` forms. If `per_row`
+and `media_queries` are blank, then calculates values from CSS.
