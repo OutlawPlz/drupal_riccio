@@ -45,7 +45,7 @@ set title_classes = [
         <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
     {% endif %}
     {% if multiple %}
-        <div class="field__items">
+        <div class="field__items riccio__items">
     {% endif %}
         {% for item in items %}
             <div{{ item.attributes.addClass('field__item') }}>{{ item }}</div>
