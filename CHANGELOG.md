@@ -6,6 +6,10 @@ All notable changes to this project will be documented in this file.
 
 Log of unreleased changes.
 
+## v0.1.0
+
+Released on 2017/09/19
+
 ### Added
 
 - Implemented Riccio config entity to define Riccio's options.
