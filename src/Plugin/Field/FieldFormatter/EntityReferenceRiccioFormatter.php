@@ -130,7 +130,7 @@ class EntityReferenceRiccioFormatter extends EntityReferenceEntityFormatter {
   public static function defaultSettings() {
 
     return array(
-        'riccio_options' => 'default'
+        'riccio_options' => ''
       ) + parent::defaultSettings();
   }
 }

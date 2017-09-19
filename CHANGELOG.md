@@ -19,7 +19,7 @@ in the *Status report* page.
 and creates a new Riccio instance using the given options.
 - Added `EntityReferenceRiccioFormatter` field formatter with relative
 `field.formatter.settings.entity_reference_riccio` schema.
-- Added `riccio.riccio.default.yml` configuration.
+- Added `riccio_theme()`, `template_preprocess_riccio()` and `riccio.html.twig`.
 
 ### Removed
 
