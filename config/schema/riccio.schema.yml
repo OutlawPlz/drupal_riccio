@@ -27,3 +27,11 @@ riccio.riccio.*:
         mediaQueries:
           type: text
           label: 'Media queries list'
+
+field.formatter.settings.entity_reference_riccio:
+  type: mapping
+  label: 'Entity reference Riccio'
+  mapping:
+    riccio_options:
+      type: string
+      label: 'Riccio options'

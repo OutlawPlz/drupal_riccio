@@ -10,6 +10,7 @@ riccio:
       /libraries/riccio/dist/riccio.min.css: { minified: true }
   js:
     /libraries/riccio/dist/riccio.min.js: { minified: true }
+    js/riccioInit.js: {}
   dependencies:
     - core/drupal
     - core/drupalSettings

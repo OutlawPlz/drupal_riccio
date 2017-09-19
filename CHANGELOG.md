@@ -15,6 +15,11 @@ Log of unreleased changes.
 and calculates Riccio's version if `package.json` is found. Then prints infos
 in the *Status report* page.
 - Added `getOptions()` function. It returns the options as saved in database.
+- Added `riccioInit.js` file. It searches for `[data-riccio-options]` in HTML
+and creates a new Riccio instance using the given options.
+- Added `EntityReferenceRiccioFormatter` field formatter with relative
+`field.formatter.settings.entity_reference_riccio` schema.
+- Added `riccio.riccio.default.yml` configuration.
 
 ### Removed
 

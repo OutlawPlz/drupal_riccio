@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+id: default
+label: Default
+options:
+  itemSelector: .item-selector
+  popSelector: .pop-selector
+  perRow: null
+  mediaQueries: ''

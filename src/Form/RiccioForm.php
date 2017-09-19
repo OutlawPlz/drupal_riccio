@@ -80,7 +80,7 @@ class RiccioForm extends EntityForm {
       '#type' => 'textarea',
       '#title' => $this->t('Media queries'),
       '#default_value' => $options['mediaQueries'],
-      '#description' => $this->t('Leave blank to calculate media queries from CSS. One media query per row. An array of strings representing media queries.'),
+      '#description' => $this->t('Leave blank to calculate <em>mediaQueries</em> from CSS. One media query per row. An array of strings representing media queries.'),
     );
 
     return $form;
